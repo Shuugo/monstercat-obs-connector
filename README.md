@@ -2,6 +2,8 @@
 
 ![](img/monstercat-logo.svg)
 
+![](img/now-playing.png)
+
 [Monstercat](https://monstercat.com) is an awesome EDM publishing label that has a great relationsnip with gamers and streamers. For a very reasonable price you can stream Monstercat artists' music in your Twitch / YouTube streams with their [Monstercat Gold program](https://www.monstercat.com/gold).
 
 [OBS (Open Broadcasting Software) Studio](https://obsproject.com/) is a popular streaming program.

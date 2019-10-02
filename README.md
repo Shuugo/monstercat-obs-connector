@@ -12,9 +12,7 @@ Now you can add the name of the currently playing track from [Monstercat.com](ht
 
 This connector uses [Tampermonkey](https://www.tampermonkey.net/) to inject some JavaScript in the Monstercat.com player, and send the name of the currently playing track to OBS, so you can display in in your stream.
 
-[Watch me code the whole thing](https://youtu.be/dJ7I1NLk7FQ) start to finish, and get it working in my stream:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dJ7I1NLk7FQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Watch me code the whole thing](https://youtu.be/dJ7I1NLk7FQ) start to finish, and get it working in my stream.
 
 Or just set it up for yourself:
 

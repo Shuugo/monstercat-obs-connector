@@ -1,11 +1,15 @@
 // ==UserScript==
-// @name         Monstercat to OBS
+// @name         Monstercat OBS Connector
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Update a ticker in your OBS stream with the currently playing track from Monstercat.com
 // @author       Josh Wulf <josh@magikcraft.io>
 // @match        https://www.monstercat.com/*
-// @grant        none
+// @grant         GM_getValue
+// @grant         GM_setValue
+// @grant         GM_addStyle
+// @grant         GM_registerMenuCommand
+// @require        https://raw.github.com/jwulf/MonkeyConfig/master/monkeyconfig.js
 // ==/UserScript==
 
 // Massive shout-out to Brendan Hagan for the OBS web socket!
@@ -23,12 +27,33 @@ var OBSWebSocket=function(e){function t(o){if(n[o])return n[o].exports;var r=n[o
 (async function() {
     'use strict';
 
-    // Your Configuration Goes Here
-    const tickerBase = "        twitter: @sitapati         github.com/jwulf       "; // Ticker
-    const OBSWebSocketPluginPassword = ""; // Put your password here
-    const OBSWebSocketPluginAddress = "localhost:4444";
-    const sourceName = "Tagline"; // the name of your ticker text source
-    // Configuration - End
+    var cfg = new MonkeyConfig({
+    title: 'Monstercat OBS Connector Configuration',
+    menuCommand: true,
+    params: {
+        OBSWebSocketPluginAddress: {
+            type: 'text',
+            default: "localhost:4444"
+        },
+        OBSWebSocketPluginPassword: {
+            type: 'text',
+            default: ''
+        },
+        tickerBase: {
+            type: 'text',
+            default: "        twitter: @sitapati         github.com/jwulf       "
+        },
+        OBSSourceName: {
+            type: 'text',
+            default: "Tagline"
+        },
+    }
+});
+
+    const tickerBase = cfg.get('tickerBase')
+    const OBSWebSocketPluginPassword = cfg.get('OBSWebSocketPluginPassword')
+    const OBSWebSocketPluginAddress = cfg.get('OBSWebSocketPluginAddress')
+    const sourceName = cfg.get('OBSSourceName')
 
     const obs = new OBSWebSocket();
 

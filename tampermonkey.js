@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Monstercat OBS Connector
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Update a ticker in your OBS stream with the currently playing track from Monstercat.com
 // @author       Josh Wulf <josh@magikcraft.io>
 // @match        https://www.monstercat.com/*
@@ -49,7 +49,7 @@
   const obs = new OBSWebSocket();
 
   var currentTrack;
-  var previousTrack;
+  var previousTrack = "";
   await obs.connect({
     address: OBSWebSocketPluginAddress,
     password: OBSWebSocketPluginPassword

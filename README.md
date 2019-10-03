@@ -24,9 +24,12 @@ Or just set it up for yourself:
 * Configure the password in OBS "Tools > WebSockets Server Plugin".
 
 ![](img/websocket-server-settings.png)
+
 * Add a Source to your scene of Type "Text (FreeType 2)" (Make sure you note the name of your source for the configuration of the connector).
+
 ![](img/add-source.png)
-* Position it where you want it, and add a Filter with type "Scroll"
+
+* Position it where you want it, and add a Filter with type "Scroll", and give it some horizontal movement.
 
 ### Browser Setup
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Monstercat OBS Connector
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  Update a ticker in your OBS stream with the currently playing track from Monstercat.com
 // @author       Josh Wulf <josh@magikcraft.io>
 // @match        https://www.monstercat.com/*
@@ -63,7 +63,7 @@
         sourceName,
         sourceSettings: {
           text: currentTrack
-            ? `${tickerBase} - Now Playing: "${currentTrack}" on Monstercat.com`
+            ? `${tickerBase} Music: "${currentTrack}" from Monstercat.com`
             : tickerBase
         }
       });
